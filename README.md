@@ -1,4 +1,4 @@
-# Skill Management System
+# Competency Management System
 > This project is an ERP-style application for automating the management of employee skills and talent using **Large Language Models**. The backend is built with **Spring Boot** and **PostgreSQL**, with **Qdrant** used as a vector database for semantic similarity search. The frontend is built with **Angular** and **Angular Material**. AI features are powered by **LangChain4j** integrated with **OpenAI** models, using a multi-agent pipeline to extract, structure, and match skills from unstructured text such as CVs and job descriptions. Real-time updates are delivered via **Server-Sent Events (SSE)** built on **Spring WebFlux**.
 
 
