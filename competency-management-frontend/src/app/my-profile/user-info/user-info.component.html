@@ -1,0 +1,14 @@
+<mat-card class="d-flex justify-content-start align-items-center">
+  <div class="profile-picture rounded-circle p-3 primary-faded-background primary-border primary-font m-3">
+    <h1 class="m-0 font-weight-bolder">{{ (user?.firstName?.[0] ?? '') + (user?.lastName?.[0] ?? '') }}</h1>
+  </div>
+  <div class="my-3">
+    <h2 class="font-weight-bold m-0">{{user?.firstName}} {{user?.lastName}}</h2>
+    <div class="font-weight-lighter">{{user?.jobTitle}}</div>
+    <mat-chip-list class="info-chips d-flex align-items-center mt-3">
+      <mat-chip class="info-chip py-1"><mat-icon class="info-chip-icon mr-1">mail_outline</mat-icon>{{user?.email}}</mat-chip>
+      <mat-chip class="info-chip"><mat-icon class="info-chip-icon mr-1">phone_iphone</mat-icon>{{user?.phoneNumber}}</mat-chip>
+      <mat-chip class="info-chip"><mat-icon class="info-chip-icon mr-1">location_on</mat-icon>{{user?.location}}</mat-chip>
+    </mat-chip-list>
+  </div>
+</mat-card>

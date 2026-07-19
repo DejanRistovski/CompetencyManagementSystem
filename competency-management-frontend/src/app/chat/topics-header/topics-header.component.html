@@ -1,0 +1,12 @@
+<div>
+  <button class="btn btn-lg dropdown-button ml-5 my-2" type="button" data-toggle="dropdown" aria-expanded="false"
+          (click)="isDropDownOpen = !isDropDownOpen">
+    <span class="d-flex align-items-center">{{ selectedTopic ? selectedTopic.title : 'New Topic' }}
+      <mat-icon class="ml-1">{{ isDropDownOpen ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</mat-icon></span>
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" *ngFor="let topic of topics" (click)="onSelectTopic(topic)">{{ topic.title }}</a>
+    <a class="dropdown-item"><span class="d-flex align-items-center" (click)="onCreateTopic()">New Topic <mat-icon
+      class="ml-1">add</mat-icon></span></a>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<mat-sidenav-container class="drawer-container">
+  <mat-sidenav #drawer
+               mode="over"
+               position="end"
+               disableClose="false"
+               [style.width]="width$ | async"
+  >
+    <ng-template #drawerContainer></ng-template>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div>
+      <app-navbar></app-navbar>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

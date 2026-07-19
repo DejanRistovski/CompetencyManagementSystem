@@ -1,0 +1,26 @@
+<mat-drawer-container autosize style="height: calc(100vh - 80px)">
+  <mat-drawer #drawer mode="side" class="drawer pr-1" style="border: none;">
+      <mat-card *ngFor="let skill of skills" class="card m-3 p-0">
+        <h2 style="background-color: rgb(103, 58, 183)" class="px-3 py-2 text-white">{{skill?.name}}</h2>
+        <mat-accordion>
+          <mat-expansion-panel hideToggle *ngFor="let level of skill.levels">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{level.name}}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>{{level.expectation}}</p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-card>
+  </mat-drawer>
+
+  <mat-drawer-content style="background: rgb(240,240,240);">
+    <div *ngIf="skills.length > 0" class="h-100 d-flex align-items-center">
+      <button type="button" mat-icon-button (click)="drawer.toggle()" [disableRipple]="true">
+        <mat-icon>{{drawer.opened ? 'keyboard_arrow_left' : 'keyboard_arrow_right'}}</mat-icon>
+      </button>
+    </div>
+  </mat-drawer-content>
+
+</mat-drawer-container>

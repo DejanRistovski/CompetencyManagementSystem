@@ -1,0 +1,88 @@
+.main-sidebar {
+  background: rgba(0, 0, 0, 90%);
+}
+
+.mat-selection-list * {
+  color: white;
+}
+
+.mat-list-single-selected-option {
+  color: black !important;
+  background: white;
+}
+
+.mat-list-item {
+  border-radius: 50rem;
+  max-width: fit-content;
+  padding: 0 !important;
+}
+
+.mat-list-option {
+  height: 40px !important;
+  text-align: center;
+  padding: 0 !important;
+}
+
+::ng-deep .mat-list-text {
+  padding: 0 !important;
+}
+
+.btn-ghost {
+  color: #cccccc;
+  background: transparent;
+  border: 1px solid #444;
+  font-size: 0.8rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.btn-ghost:hover { border-color: #aaa; color: #fff; }
+
+.btn-primary {
+  color: #1a1a1a;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+.btn-primary:hover { background: #e8e8e8; border-color: #e8e8e8; }
+
+.nav-username {
+  color: #e0e0e0;
+  font-size: 0.875rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.5rem;
+}
+
+.nav-username .avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #5b5bd6;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  flex-shrink: 0;
+}
+
+.nav-divider {
+  width: 1px;
+  height: 48px;
+  background: #444;
+}

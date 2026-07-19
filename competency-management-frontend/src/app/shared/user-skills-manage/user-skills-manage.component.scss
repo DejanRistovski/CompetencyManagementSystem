@@ -1,0 +1,17 @@
+.level-card {
+  border: 2px solid #e0e0e0 !important;
+  cursor: pointer;
+  transition: border-color .15s, background .15s;
+}
+.level-card:hover { border-color: #5B4EF0 !important; }
+.level-card.selected { border-color: #5B4EF0 !important; }
+.level-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .8rem; font-weight: 700;
+  flex-shrink: 0; transition: background .15s, color .15s;
+}
+.level-card.selected .level-num {
+  background: #5B4EF0;
+  color: #fff;
+}

@@ -1,0 +1,265 @@
+.drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.25rem 1.5rem;
+}
+.drawer-section-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+.drawer-header {
+  padding: 1.5rem 1.5rem 1.25rem;
+  border-bottom: 1px solid #f0f2f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+.drawer-category {
+  display: inline-block;
+  background: #ede9fe;
+  color: #5b4ef0;
+  padding: 2px 9px;
+  border-radius: 100px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+.drawer-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+.drawer-desc {
+  font-size: 0.8rem;
+  color: #8a8fa8;
+  line-height: 1.6;
+}
+
+.drawer-body {
+  padding: 1.25rem 1.5rem;
+}
+
+.level-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.level-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.primary-level-bubble {
+  background: #5B4EF0;
+  font-weight: bolder;
+  color: #E7F5F0;
+}
+
+.normal-level-bubble {
+  background: #F4F5F7;
+  border: 2px solid #E2E4EA;
+  color: #8A8FA8;
+  font-weight: bolder;
+}
+
+.level-bubble {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.primary-hg-level-bubble {
+  width: 32px;
+  height: 32px;
+  background: #534ab7;
+  border: 2px solid #EDE9FE;
+  color: #E7F5F0;
+  font-weight: bolder;
+}
+
+.green-hg-level-bubble {
+  width: 32px;
+  height: 32px;
+  background: #0F9B6E;
+  border: 2px solid #E7F5F0;
+  color: #E7F5F0;
+  font-weight: bolder;
+}
+
+.red-hg-level-bubble {
+  width: 32px;
+  height: 32px;
+  background: #C0392B;
+  border: 2px solid #ffdee1;
+  color: #E7F5F0;
+  font-weight: bolder;
+}
+
+.orange-hg-level-bubble {
+  width: 32px;
+  height: 32px;
+  background: #f97316;
+  border: 2px solid #fed7aa;
+  color: #E7F5F0;
+  font-weight: bolder;
+}
+
+.primary-font {
+  color: #5B4EF0;
+}
+
+.primary-hg-font {
+  color: #534ab7;
+}
+
+.green-font {
+  color: #0F9B6E;
+}
+
+.red-font {
+  color: #C0392B;
+}
+
+.orange-font {
+  color: #f97316;
+}
+
+.normal-font {
+  color: #8A8FA8;
+}
+
+.primary-background {
+  background-color: #5B4EF0;
+}
+
+.green-background {
+  background-color: #0F9B6E;
+}
+
+.red-background {
+  background-color: #C0392B;
+}
+
+.orange-background {
+  background-color: #f97316;
+}
+
+.normal-background {
+  background-color: #8A8FA8;
+}
+
+.primary-faded-background {
+  background-color: #EDE9FE;
+}
+
+.green-faded-background {
+  background-color: #E7F5F0;
+}
+
+.red-faded-background {
+  background-color: #ffdee1;
+}
+
+.orange-faded-background {
+  background-color: #fff7ed;
+}
+
+.normal-faded-background {
+  background-color: #8A8FA8;
+}
+
+.normal-track {
+  background: #ccc;
+  width: 2px;
+  flex: 1;
+  min-height: 14px;
+  margin: 4px 0;
+}
+
+.primary-track {
+  background: #5b4ef0;
+  width: 2px;
+  flex: 1;
+  min-height: 14px;
+  margin: 4px 0;
+}
+
+.primary-gradient-track {
+  background: linear-gradient(#5b4ef0, #534ab7);
+  width: 2px;
+  flex: 1;
+  min-height: 14px;
+  margin: 4px 0;
+}
+
+.red-gradient-track {
+  background: linear-gradient( #5b4ef0, #C0392B);
+  width: 2px;
+  flex: 1;
+  min-height: 14px;
+  margin: 4px 0;
+}
+
+.orange-gradient-track {
+  background: linear-gradient( #5b4ef0, #f97316);
+  width: 2px;
+  flex: 1;
+  min-height: 14px;
+  margin: 4px 0;
+}
+
+.green-gradient-track {
+  background: linear-gradient( #5b4ef0, #0f9b6e);
+  width: 2px;
+  flex: 1;
+  min-height: 14px;
+  margin: 4px 0;
+}
+
+.level-content {
+  padding-bottom: 1.25rem;
+}
+
+.level-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.level-expectation {
+  font-size: 0.8rem;
+  color: #8a8fa8;
+  line-height: 1.65;
+}
+
+.checkmark {
+  font-size: 0.8rem;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-badge {
+  font-size: 0.6rem;
+  border-radius: 50rem;
+  padding: .1rem .5rem;
+}

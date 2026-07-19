@@ -1,0 +1,20 @@
+<div class="container">
+  <h1 class="mt-3 font-weight-bolder">Job Postings</h1>
+  <div class="row">
+    <div class="col-6 mt-2" *ngFor="let jobPosting of jobPostings" (click)="onPostingDetails(jobPosting)">
+      <div class="jp-header p-4">
+        <div class="jp-eyebrow">
+          <span class="dot"></span>
+          Job Posting
+        </div>
+
+        <h1 class="jp-title">{{ jobPosting?.postingTitle }}</h1>
+
+        <div class="jp-meta">
+          <div *ngFor="let skill of jobPosting?.skills" class="chip mr-1 mt-1">
+            {{ skill.name }} <span class="chip-dot">·</span> {{ getMatchedLevel(skill)?.name }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,23 @@
+.profile-picture {
+  border: 3px solid;
+  height: fit-content;
+}
+
+.info-chip {
+  font-size: .7rem;
+  padding: .3rem .75rem;
+  border-radius: 100px;
+  background: #f2f2f2;
+  font-weight: lighter;
+}
+
+.info-chip .material-icons-round {
+  font-size: 13px;
+}
+
+.info-chip-icon {
+  font-size: 13px;
+  height: 13px;
+  width: 13px;
+  font-weight: lighter;
+}

@@ -1,0 +1,23 @@
+<div class="main-background">
+  <div class="d-flex">
+    <app-skill-list [skills]="selectedTopic?.skills ?? []"></app-skill-list>
+    <div class="w-75 mx-auto flex-column justify-content-center">
+      <div style="width: 60%">
+        <app-topics-header [topics]="(topics | async) ?? []"
+                           [selectedTopic]="selectedTopic"
+                           (topicSelected)="onSelectTopic($event)"
+                           (topicCreated)="onCreateTopic()"></app-topics-header>
+      </div>
+      <mat-divider class="w-100"></mat-divider>
+      <div style="width: 60%" class="mx-auto">
+        <app-message *ngFor="let msg of selectedTopic?.messages"
+                     [role]="msg.type"
+                     [message]="msg.text">
+        </app-message>
+        <app-message *ngIf="message !== ''" [role]="ChatMessageTypeEnum.AI" [message]="message"></app-message>
+        <app-input-bar [isTopicSelected]="selectedTopic !== undefined"
+                       (onTextEntered)="onTextInput($event)"></app-input-bar>
+      </div>
+    </div>
+  </div>
+</div>

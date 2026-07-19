@@ -1,0 +1,106 @@
+<div class="container">
+  <div class="jp-header mt-3">
+    <div class="jp-eyebrow">
+      <span class="dot"></span>
+      Job Posting
+    </div>
+
+    <h1 class="jp-title">{{ jobPosting?.postingTitle }}</h1>
+
+    <div class="jp-meta">
+      <div *ngFor="let skill of jobPosting?.skills" class="chip mr-2 mt-2">
+        {{ skill.name }} <span class="chip-dot">·</span> {{ getMatchedLevel(skill)?.name }}
+      </div>
+    </div>
+
+    <ng-container *ngIf="!hasEditPermission">
+    <hr class="w-100 my-4">
+      <div [innerHTML]="jobPosting?.postingDescription"></div>
+    </ng-container>
+  </div>
+
+  <div class="jp-editor-card mb-4" *ngIf="hasEditPermission">
+    <div class="jp-editor-label">
+      <span>Job Description</span>
+      <button mat-flat-button class="primary-background text-white ml-2" (click)="''">Save</button>
+    </div>
+    <ng-container>
+      <ngx-editor-menu [editor]="editor" *ngIf="editor"></ngx-editor-menu>
+      <ngx-editor
+        [editor]="editor"
+        *ngIf="editor"
+        [(ngModel)]="jobPosting!.postingDescription">
+      </ngx-editor>
+    </ng-container>
+  </div>
+
+  <div class="jp-header" *ngIf="!hasEditPermission">
+    <ng-container *ngIf="!hasSubmitted">
+      <h1>Apply Here!</h1>
+      <form class="row">
+        <mat-form-field class="col-6">
+          <mat-label>First Name</mat-label>
+          <input matInput placeholder="John" [(ngModel)]="userInfo.firstName" name="firstName">
+        </mat-form-field>
+        <mat-form-field class="col-6">
+          <mat-label>Last Name</mat-label>
+          <input matInput placeholder="Doe" [(ngModel)]="userInfo.lastName" name="lastName">
+        </mat-form-field>
+        <mat-form-field class="col-6">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput placeholder="test@mail.com" [(ngModel)]="userInfo.email" name="email">
+        </mat-form-field>
+
+        <div class="col-6 d-flex justify-content-end align-items-center">
+          <div>{{ uploadedCV?.name }}</div>
+          <div *ngIf="!uploadedCV" class="font-italic">No CV Uploaded</div>
+          <div class="ml-3">
+            <button mat-stroked-button class="primary-border primary-font d-flex align-items-center"
+                    (click)="document.getElementById('cvInput')!.click()">
+              <mat-icon style="font-size: 16px; width: 16px; height: 16px">upload</mat-icon>
+              Import CV
+            </button>
+            <input type="file" id="cvInput" accept=".pdf,.doc,.docx" style="display:none"
+                   (change)="onFileSelected($event)">
+          </div>
+        </div>
+        <div class="col-6"></div>
+        <div class="col-6 d-flex justify-content-end mt-5">
+          <button mat-flat-button class="primary-background text-white d-flex align-items-center" (click)="onSubmit()">
+            Submit
+          </button>
+        </div>
+      </form>
+    </ng-container>
+    <ng-container *ngIf="hasSubmitted">
+      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; gap: 1rem;">
+
+        <div style="width: 56px; height: 56px; border-radius: 50%; border: 2px solid #534AB7; display: flex; align-items: center; justify-content: center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12.5l4.5 4.5 9.5-9.5" stroke="#534AB7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p style="font-size: 18px; font-weight: 500; margin: 0;">Application submitted</p>
+      </div>
+    </ng-container>
+  </div>
+
+  <div *ngIf="hasEditPermission" class="row">
+    <div *ngFor="let applicant of jobPosting?.jobPostingApplicants" class="col-6 my-3">
+      <mat-card class="d-flex justify-content-between align-items-center" >
+        <div class="d-flex justify-content-start">
+          <div class="profile-picture rounded-circle p-3 primary-faded-background primary-border primary-font m-3">
+            <h1 class="m-0 font-weight-bolder">{{ (applicant.user.firstName[0]) + (applicant.user.lastName[0]) }}</h1>
+          </div>
+          <div class="my-3">
+            <h2 class="font-weight-bold m-0">{{applicant.user.firstName}} {{applicant.user.lastName}}</h2>
+            <div class="font-weight-lighter">{{applicant.user.email}}</div>
+          </div>
+        </div>
+        <div class="profile-picture rounded-circle p-3 primary-border primary-font m-3">
+          <h1 class="m-0 font-weight-bolder">{{ getScorePercentage(applicant) }}%</h1>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

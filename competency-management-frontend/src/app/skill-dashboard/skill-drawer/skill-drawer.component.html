@@ -1,0 +1,31 @@
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div>
+      <p class="font-weight-bold mb-0" *ngIf="badgeData">
+        <span [ngClass]="badgeClasses" class="card-badge">
+          {{badgeData.label}}
+        </span>
+      </p>
+      <div class="drawer-title" id="d-title">{{skill?.name}}</div>
+      <div class="drawer-desc" id="d-desc">{{skill?.description}}</div>
+    </div>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-section-label">Levels</div>
+    <div *ngFor="let level of skill?.levels; let i = index; let last = last">
+      <div class="level-row">
+        <div class="level-left">
+          <div class="level-bubble" [ngClass]="getBubbleStyle(level)">
+            <mat-icon *ngIf="getMatchedLevel() === level" class="checkmark">check</mat-icon>
+            <span *ngIf="getMatchedLevel() !== level">{{level.levelOrder}}</span>
+          </div>
+          <div class="level-connector" [ngClass]="getTrackLine(skill?.levels?.[i+1])" *ngIf="!last"></div>
+        </div>
+        <div class="level-content">
+          <div class="level-name">{{ level.name }}</div>
+          <p class="level-expectation">{{ level.expectation }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

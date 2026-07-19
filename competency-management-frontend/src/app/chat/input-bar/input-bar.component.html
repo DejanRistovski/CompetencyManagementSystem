@@ -1,0 +1,7 @@
+<div style="width: 45%" [ngClass]="isTopicSelected ? 'input-bar' : 'new-topic-input-bar'">
+  <h1 *ngIf="!isTopicSelected" class="text-center mb-4 new-topic-title">What do you need done?</h1>
+  <textarea class="w-100 mx-3 px-3 py-2" [formControl]="textInputFC" (keydown.enter)="textEntered()"></textarea>
+  <button mat-mini-fab class="textarea-button mat-elevation-z3" color="primary" (click)="textEntered()">
+    <mat-icon matSuffix>send</mat-icon>
+  </button>
+</div>

@@ -1,0 +1,33 @@
+.input-bar {
+  position: absolute;
+  bottom: 1%;
+}
+
+.new-topic-input-bar {
+  position: absolute;
+  bottom: 50%;
+}
+
+.new-topic-title {
+  font-size: 2rem;
+}
+
+.input-bar textarea, .new-topic-input-bar textarea {
+  color: white;
+  border-radius: 25px;
+  border: 1px black;
+  resize: none;
+  background: rgba(0, 0, 0, 85%);
+  font-size: 1rem;
+}
+
+.textarea-button {
+  position: absolute;
+  right: -10px;
+  bottom: 15px;
+}
+
+textarea:focus {
+  outline: none;
+  border: none;
+}

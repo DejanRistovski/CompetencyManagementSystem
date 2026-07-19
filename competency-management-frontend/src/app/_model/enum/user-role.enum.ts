@@ -1,0 +1,4 @@
+export enum UserRoleEnum {
+  SKILL_MANAGEMENT = 'SKILL_MANAGEMENT',
+  EMPLOYEE = 'EMPLOYEE'
+}

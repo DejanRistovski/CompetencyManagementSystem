@@ -1,0 +1,10 @@
+<ng-container>
+    <div *ngIf="(isLoading$ | async)" class="loader-background">
+        <mat-spinner [diameter]="150" class="d-inline-block loader"></mat-spinner>
+    </div>
+    <ng-content></ng-content>
+</ng-container>
+
+
+
+
